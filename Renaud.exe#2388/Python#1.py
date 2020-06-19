@@ -39,10 +39,13 @@ current_time = now.strftime("%H:%M:%S")
 print("[" + current_time + "] Connexion à Instagram")
 # Accès à la page de suggestions
 driver.implicitly_wait(3)
-sleep(1)
-driver.find_element_by_xpath(("//button[@class=\"sqdOP yWX7d    y3zKF     \"]"))\
-    .click()
-# Boucle d'abonnement aux suggestions d'amis
+while True: 
+  try:
+    driver.find_element_by_xpath(("//button[@class=\"sqdOP yWX7d    y3zKF     \"]"))\
+        .click()
+    break 
+  except:
+    pass
 while True:
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
